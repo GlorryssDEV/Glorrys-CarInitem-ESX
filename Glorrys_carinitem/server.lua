@@ -12,8 +12,8 @@ for vehicle,item in pairs(Glorrys.Vehicles) do
         if activeVehicle[source] then
 
             TriggerClientEvent('ox_lib:notify',source,{
-                title = 'Vehicle',
-                description = 'Už máš spawnuté vozidlo',
+                title = 'Glorrys Development',
+                description = 'You already have a spawned vehicle',
                 type = 'error'
             })
 
