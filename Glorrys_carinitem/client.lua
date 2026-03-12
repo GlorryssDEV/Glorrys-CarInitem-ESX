@@ -4,8 +4,8 @@ RegisterNetEvent('glorrys_caritem:spawn', function(model)
 
     if vehicle and DoesEntityExist(vehicle) then
         lib.notify({
-            title = 'Vehicle',
-            description = 'Už máš spawnuté vozidlo',
+            title = 'Glorrys Development',
+            description = 'You already have a spawned vehicle',
             type = 'error'
         })
         return
@@ -31,8 +31,8 @@ RegisterNetEvent('glorrys_caritem:spawn', function(model)
     SetModelAsNoLongerNeeded(hash)
 
     lib.notify({
-        title = 'Vehicle',
-        description = 'Auto spawnuto',
+        title = 'Glorrys Development',
+        description = 'Vehicle spawned successfully',
         type = 'success'
     })
 
@@ -52,8 +52,8 @@ RegisterCommand("storevehicle", function()
     if #(pedCoords - vehCoords) > 5.0 then
 
         lib.notify({
-            title = 'Vehicle',
-            description = 'Musíš být blízko vozidla',
+            title = 'Glorrys Development',
+            description = 'You must be near the vehicle',
             type = 'error'
         })
 
@@ -62,7 +62,7 @@ RegisterCommand("storevehicle", function()
 
     local finished = lib.progressBar({
         duration = Glorrys.StoreTime,
-        label = 'Schováváš vozidlo...',
+        label = 'Storing vehicle...',
         useWhileDead = false,
         canCancel = false,
         disable = {
@@ -91,15 +91,15 @@ RegisterCommand("storevehicle", function()
     TriggerServerEvent('glorrys_caritem:returnVehicle')
 
     lib.notify({
-        title = 'Vehicle',
-        description = 'Vozidlo bylo schováno',
+        title = 'Glorrys Development',
+        description = 'Vehicle stored successfully',
         type = 'success'
     })
 
 end)
 
 
-RegisterKeyMapping('storevehicle', 'Schovat vozidlo', 'keyboard', 'E')
+RegisterKeyMapping('storevehicle', 'Store vehicle', 'keyboard', 'E')
 
 CreateThread(function()
 
@@ -126,8 +126,8 @@ CreateThread(function()
                     TriggerServerEvent('glorrys_caritem:returnVehicle')
 
                     lib.notify({
-                        title = 'Vehicle',
-                        description = 'Vozidlo bylo smazáno',
+                        title = 'Glorrys Development',
+                        description = 'Vehicle was automatically removed',
                         type = 'inform'
                     })
 
